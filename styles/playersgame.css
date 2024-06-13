@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(210, 180, 140); 
+    text-align: center;
+}
+.score-box{
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    /* border: 2px solid black; */
+    padding: 2rem;
+    /* gap:1rem; */
+    justify-content: center;
+    align-items: center;
+}
+.game-container{
+    height: 75vh;
+    width: 100vw;
+    background-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+.player1-score,.player2-score{
+    border: 5px solid rgb(92, 51, 23);
+    padding: 1rem;
+    background-color: rgb(210, 180, 140);
+    color: rgb(92, 51, 23);
+    font-weight: bold;
+    /* border-radius: 6px; */
+    /* display: flex; */
+}
+.player1-score{
+    border-right:none ;
+    padding-right: 0;
+}
+.player2-score{
+    border-left:none;
+    padding-left: 0;
+}
+.player-score{
+    border-left: 2px solid rgb(92, 51, 23);
+    border-right:2px solid rgb(92, 51, 23) ;
+    padding: 1rem;
+}
+.game-box{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    border: 7px solid rgb(92, 51, 23);
+}
+.cell{
+    height:100px;
+    width: 100px;
+    background-color: rgb(210, 180, 140);
+    border:3px solid rgb(92, 51, 23);
+    font-size: 10vmin;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

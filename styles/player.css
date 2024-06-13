@@ -68,3 +68,11 @@ button{
 .footer a{
     color: black;
 }
+.note{
+    text-align: center;
+}
+.note-title{
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
