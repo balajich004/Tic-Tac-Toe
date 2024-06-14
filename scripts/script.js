@@ -1,3 +1,15 @@
+let cell=document.querySelectorAll(".cell");
+const wincon=[
+    [0, 1, 2],
+    [0, 3, 6],
+    [0, 4, 8],
+    [1, 4, 7],
+    [2, 5, 8],
+    [2, 4, 6],
+    [3, 4, 5],
+    [6, 7, 8],
+];
+let turn=true;
 function handlePlayerDetails(){
     const player1=document.querySelector("#player1");
     const player2=document.querySelector("#player2");
@@ -27,10 +39,43 @@ function display() {
         }
     }
 }
-let cell=document.querySelector(".cell");
-cell.addEventListener("click",()=>{
-    cell.innerText="X";
-});
+
+
+cell.forEach((boxed)=>{
+    boxed.addEventListener("click",()=>{
+        if(turn){
+            if(boxed.innerText==="X" || boxed.innerText==="O"){
+                boxed.innerText=boxed.innerText;
+            }
+            else{
+            boxed.innerText="X";
+            turn=false;
+            } 
+            check();
+        }
+        else{
+            if(boxed.innerText==="X" || boxed.innerText==="O"){
+                boxed.innerText=boxed.innerText;
+            }
+            else{
+                boxed.innerText="O";
+                turn=true;
+            } 
+            check();
+        }
+    });
+})
+
+
+function check() {
+    for (let con of wincon) {
+        let [a,b,c] = con;
+        if (cell[a].innerText!=="" && cell[a].innerText===cell[b].innerText && cell[a].innerText===cell[c].innerText) {
+            console.log(`Winning combination: ${con}`);
+            return;
+        }
+    }
+}
 
 document.addEventListener("DOMContentLoaded",()=>{
     handlePlayerDetails();
