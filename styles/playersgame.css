@@ -21,7 +21,6 @@ body{
 .game-container{
     height: 75vh;
     width: 100vw;
-    background-color: lightcoral;
     display: flex;
     justify-content: flex-start;
     align-items: center;

@@ -3,6 +3,7 @@ const resetb=document.querySelector(".resetb");
 const resultc=document.querySelector(".resultc");
 const p1s=document.querySelector(".p1");
 const p2s=document.querySelector(".p2");
+const newgameb=document.querySelector(".newgameb");
 const wincon=[
     [0, 1, 2],
     [0, 3, 6],
@@ -47,11 +48,18 @@ cell.forEach((boxed)=>{
 resetb.addEventListener("click",()=>{
     reset();
 });
+newgameb.addEventListener("click",()=>{
+    player1Count=0;
+    player2Count=0;
+    setgame();
+    reset();
+});
 /*functions*/
 function reset(){
     for(celled of cell){
         celled.innerText="";
     }
+    turn=true;
 }
 function display() {
     const player1_title=document.querySelector(".player1-title");
@@ -86,17 +94,37 @@ function check() {
     for (let con of wincon) {
         let [a,b,c] = con;
         if (cell[a].innerText!=="" && cell[a].innerText===cell[b].innerText && cell[a].innerText===cell[c].innerText) {
-            resultc.innerText=`Winning combination: ${con}`;
             if(cell[a].innerText==="X"){
                 p1s.innerText=++player1Count;
+                resultc.innerText=`You win X 
+                Your Winning combination: ${con}`;
             }
             else{
                 p2s.innerText=++player2Count;
+                resultc.innerText=`You win O
+                 Your Winning combination: ${con}`;
             }
             reset();
             return;
         }
     }
+    // Check for a tie
+    let isTie = true;
+    for (let boxed of cell) {
+        if (boxed.innerText === "") {
+            isTie = false;
+            break;
+        }
+    }
+    
+    if (isTie) {
+        resultc.innerText = "It's a tie!";
+        reset();
+    }
 }
-
+function setgame(){
+    p1s.innerText=player1Count;
+    p2s.innerText=player2Count;
+    resultc.innerHTML="";
+}
 
