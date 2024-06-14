@@ -1,7 +1,8 @@
 let cell=document.querySelectorAll(".cell");
-let turn=true;
 const resetb=document.querySelector(".resetb");
 const resultc=document.querySelector(".resultc");
+const p1s=document.querySelector(".p1");
+const p2s=document.querySelector(".p2");
 const wincon=[
     [0, 1, 2],
     [0, 3, 6],
@@ -12,6 +13,8 @@ const wincon=[
     [3, 4, 5],
     [6, 7, 8],
 ];
+let turn=true;
+let player1Count=0,player2Count=0;
 /*eventlisteners*/
 document.addEventListener("DOMContentLoaded",()=>{
     handlePlayerDetails();
@@ -84,6 +87,12 @@ function check() {
         let [a,b,c] = con;
         if (cell[a].innerText!=="" && cell[a].innerText===cell[b].innerText && cell[a].innerText===cell[c].innerText) {
             resultc.innerText=`Winning combination: ${con}`;
+            if(cell[a].innerText==="X"){
+                p1s.innerText=++player1Count;
+            }
+            else{
+                p2s.innerText=++player2Count;
+            }
             reset();
             return;
         }
