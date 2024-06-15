@@ -108,17 +108,15 @@ function check() {
             return;
         }
     }
-    // Check for a tie
-    let isTie = true;
-    for (let boxed of cell) {
-        if (boxed.innerText === "") {
-            isTie = false;
+    let isTie=true;
+    for (let boxed of cell){
+        if (boxed.innerText===""){
+            isTie=false;
             break;
         }
     }
-    
-    if (isTie) {
-        resultc.innerText = "It's a tie!";
+    if(isTie){
+        resultc.innerText="It's a tie!";
         reset();
     }
 }

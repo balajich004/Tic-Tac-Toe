@@ -27,7 +27,6 @@ cell.forEach((boxed)=>{
             boxed.innerText="X";
             } 
             let rmove=Math.random();
-            console.log(rmove);
             if(rmove>0 && rmove<1/3){
                 if(cell[0].innerText==="")
                     cell[0].innerText="O";
@@ -127,8 +126,6 @@ function putfor1(){
             cell[7].innerText="O";
         else if(cell[8].innerText==="")
             cell[8].innerText="O";
-        else
-            putfor2();
 }
 function putfor2(){
     if(cell[0].innerText==="")
@@ -143,8 +140,6 @@ function putfor2(){
         cell[7].innerText="O";
     else if(cell[8].innerText==="")
         cell[8].innerText="O";
-    else
-        putfor3();
 }
 function putfor3(){
     if(cell[0].innerText==="")
@@ -159,6 +154,4 @@ function putfor3(){
         cell[4].innerText="O";
     else if(cell[5].innerText==="")
         cell[5].innerText="O";
-    else 
-        putfor1();
 }
