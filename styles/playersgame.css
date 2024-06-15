@@ -12,9 +12,7 @@ body{
     height: 15vh;
     width: 100vw;
     display: flex;
-    /* border: 2px solid black; */
     padding: 2rem;
-    /* gap:1rem; */
     justify-content: center;
     align-items: center;
 }
@@ -34,8 +32,6 @@ body{
     background-color: rgb(210, 180, 140);
     color: rgb(92, 51, 23);
     font-weight: bold;
-    /* border-radius: 6px; */
-    /* display: flex; */
 }
 .player1-score{
     border-right:none ;
@@ -95,4 +91,10 @@ body{
 .footer a{
     color: black;
     text-decoration: none;
+}
+.resultc{
+    font-size: 2rem;
+    padding: 8px;
+    color: rgb(92, 51, 23);
+    font-family:fantasy;
 }

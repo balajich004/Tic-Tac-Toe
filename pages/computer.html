@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Player vs Computer</title>
+    <link rel="shortcut icon" href="../images/tic-tac-toe-favicon-img.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/playersgame.css">
 </head>
 <body>
-    This site is under construction 👷‍♂️👷
+    <div class="score-box">
+        <div class="player1-score">
+            <span class="player1-title">👨‍🦱 Player</span>
+            <span class="player-score p1">0</span>
+        </div>
+        <div class="player2-score">
+            <span class="player-score p2">0</span>
+            <span class="player2-title">🤖 Computer</span>
+        </div>
+    </div>
+    <div class="game-container">
+        <div class="game-box">
+            <div class="placeholder">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="placeholder">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="placeholder">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+        <div class="reset">
+            <button class="resetb">reset gameboard</button>
+            <button class="newgameb">Newgame</button>
+        </div>
+        <div class="resultc"></div>
+    </div>
+    <div class="footer">&#169; 2024<a href="https://github.com/balajich004" style="margin-left: 5px;">CHENNUPATI BALAJI</a></div>
+    <script src="../scripts/compscript.js"></script>
 </body>
 </html>
