@@ -28,14 +28,36 @@ cell.forEach((boxed)=>{
             } 
             let rmove=Math.random();
             console.log(rmove);
-                if(rmove>0 && rmove<1/3){
-                    if(cell[0].innerText==="")
-                        cell[0].innerText="O";
-                    else if(cell[1].innerText==="")
-                        cell[1].innerText="O";
-                    else if(cell[2].innerText==="")
-                        cell[2].innerText="O";
-                }
+            if(rmove>0 && rmove<1/3){
+                if(cell[0].innerText==="")
+                    cell[0].innerText="O";
+                else if(cell[1].innerText==="")
+                    cell[1].innerText="O";
+                else if(cell[2].innerText==="")
+                    cell[2].innerText="O";
+                else
+                    putfor1();
+            }
+            else if(rmove>1/3 && rmove<2/3){
+                if(cell[3].innerText==="")
+                    cell[3].innerText="O";
+                else if(cell[4].innerText==="")
+                    cell[4].innerText="O";
+                else if(cell[5].innerText==="")
+                    cell[5].innerText="O";
+                else 
+                    putfor2();
+            }
+            if(rmove>2/3 && rmove<3/3){
+                if(cell[6].innerText==="")
+                    cell[6].innerText="O";
+                else if(cell[7].innerText==="")
+                    cell[7].innerText="O";
+                else if(cell[8].innerText==="")
+                    cell[8].innerText="O";
+                else
+                    putfor3();
+            }
             check();
         }
     });
@@ -63,29 +85,27 @@ function check() {
         if (cell[a].innerText!=="" && cell[a].innerText===cell[b].innerText && cell[a].innerText===cell[c].innerText) {
             if(cell[a].innerText==="X"){
                 p1s.innerText=++player1Count;
-                resultc.innerText=`You win X 
+                resultc.innerText=`You win Hero, you defeated the computer
                 Your Winning combination: ${con}`;
             }
             else{
                 p2s.innerText=++player2Count;
-                resultc.innerText=`You win O
+                resultc.innerText=`You lose son, you were defeated by the computer
                  Your Winning combination: ${con}`;
             }
             reset();
             return;
         }
     }
-    // Check for a tie
-    let isTie = true;
+    let isTie=true;
     for (let boxed of cell) {
-        if (boxed.innerText === "") {
-            isTie = false;
+        if(boxed.innerText===""){
+            isTie=false;
             break;
         }
     }
-    
-    if (isTie) {
-        resultc.innerText = "It's a tie!";
+    if(isTie){
+        resultc.innerText="It's a tie!";
         reset();
     }
 }
@@ -94,4 +114,51 @@ function setgame(){
     p2s.innerText=player2Count;
     resultc.innerHTML="";
 }
-
+function putfor1(){
+        if(cell[3].innerText==="")
+            cell[3].innerText="O";
+        else if(cell[4].innerText==="")
+            cell[4].innerText="O";
+        else if(cell[5].innerText==="")
+            cell[5].innerText="O";
+        else if(cell[6].innerText==="")
+            cell[6].innerText="O";
+        else if(cell[7].innerText==="")
+            cell[7].innerText="O";
+        else if(cell[8].innerText==="")
+            cell[8].innerText="O";
+        else
+            putfor2();
+}
+function putfor2(){
+    if(cell[0].innerText==="")
+        cell[0].innerText="O";
+    else if(cell[1].innerText==="")
+        cell[1].innerText="O";
+    else if(cell[2].innerText==="")
+        cell[2].innerText="O";
+    else if(cell[6].innerText==="")
+        cell[6].innerText="O";
+    else if(cell[7].innerText==="")
+        cell[7].innerText="O";
+    else if(cell[8].innerText==="")
+        cell[8].innerText="O";
+    else
+        putfor3();
+}
+function putfor3(){
+    if(cell[0].innerText==="")
+        cell[0].innerText="O";
+    else if(cell[1].innerText==="")
+        cell[1].innerText="O";
+    else if(cell[2].innerText==="")
+        cell[2].innerText="O";
+    else if(cell[3].innerText==="")
+        cell[3].innerText="O";
+    else if(cell[4].innerText==="")
+        cell[4].innerText="O";
+    else if(cell[5].innerText==="")
+        cell[5].innerText="O";
+    else 
+        putfor1();
+}
